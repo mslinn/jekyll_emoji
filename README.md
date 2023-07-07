@@ -1,38 +1,62 @@
-# JekyllEmoji
-
+# jekyll_emoji
 [![Gem Version](http://img.shields.io/gem/v/jekyll_emoji.svg)][gem]
-[![Dependency Status](http://img.shields.io/gemnasium/mslinn/jekyll_emoji.svg)][gemnasium]
-[![Coverage Status](http://img.shields.io/coveralls/mslinn/jekyll_emoji.svg)][coveralls]
 
-[gem]: https://rubygems.org/gems/jekyll_emoji
-[gemnasium]: https://gemnasium.com/mslinn/jekyll_emoji
-[coveralls]: https://coveralls.io/r/mslinn/jekyll_emoji
-
-Description of JekyllEmoji
+Inserts the specified emoji into the document.
+You can specify the size and alignment of the emoji.
+If you specify an emoji name that does not exist, the `undefined` emoji is shown.
 
 
 ## Installation
 
-Add this line to your Jekyll website's Gemfile, within the jekyll_plugins group:
+Add this line to your Jekyll website's `Gemfile`, within the `jekyll_plugins` group:
 
+```ruby
 group :jekyll_plugins do
   gem 'jekyll_emoji'
 end
+```
 
 And then execute:
+```bash
+$ bundle
+```
 
-    $ bundle
+
+## Syntax
+
+```text
+{% emoji OPTIONS %}
+```
+`OPTIONS` are:
+
+ - `align` - `left`, `right` or `inline`
+ - `emoji_and_name` - causes the name of the emoji to be output along with the image
+ - `list` - output all emojis
+ - `name` - name of emoji
+
+`list` and `name` are mutually exclusive; only specify one of them.
 
 
-## Usage
+## Example Usage
 
-Describe how to use this gem
+```text
+{% emoji name='boom' %}
+{% emoji align='right' name='grin' %}
+{% emoji name='sad' size='12pt' %}
+{% emoji align='right' name='horns' size='12pt' %}
+{% emoji emoji_and_name name='poop' %}
+{% emoji align='right' emoji_and_name name='scream' %}
+{% emoji list %}
+{% emoji list size='1em' %}
+```
+
+See the [demo](demo/index.html) for more examples.
 
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
-Then, run `rake test` to run the tests.
+Then, run `bundle exec rake test` to run the tests.
 You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`.
