@@ -37,6 +37,24 @@ $ bundle
 
 `list` and `name` are mutually exclusive; only specify one of them.
 
+If neither `list` nor `name` is specified, the `smiley` emoji is output.
+
+The names of all supported emojis are:
+
+```
+angry
+boom
+grin
+horns
+kiss
+open
+poop
+sad
+scream
+smiley
+smirk
+two_hearts
+```
 
 ## Example Usage
 
