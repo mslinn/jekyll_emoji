@@ -30,10 +30,11 @@ $ bundle
 ```
 `OPTIONS` are:
 
- - `align` - `left`, `right` or `inline`
- - `emoji_and_name` - causes the name of the emoji to be output along with the image
- - `list` - output all emojis
- - `name` - name of emoji
+ - `align` - `left`, `right` or `inline` (default is inline)
+ - `emoji_and_name` - causes the name of the emoji to be output along with the image (default is false)
+ - `list` - output all emojis (default is false)
+ - `name` - name of emoji (defaults to smiley)
+ - `size` - height of emoji (defaults to 3em)
 
 `list` and `name` are mutually exclusive; only specify one of them.
 
