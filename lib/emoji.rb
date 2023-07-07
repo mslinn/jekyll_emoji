@@ -1,11 +1,5 @@
 require 'jekyll_plugin_support'
-require_relative 'jekyll_emoji/version.rb'
-
-require 'jekyll_plugin_support'
-
-module JekyllPluginTagTemplate
-  PLUGIN_NAME = 'tag_template'.freeze
-end
+require_relative 'jekyll_emoji_tag/version.rb'
 
 # This Jekyll tag plugin creates an emoji of the desired size and alignment.
 #
@@ -24,11 +18,11 @@ end
 # To set the log level to :debug, write an entery into _config.yml, like this:
 # plugin_loggers:
 #   MyTag: debug
-module JekyllEmoji
+module JekyllEmojiTag
   # This class implements the Jekyll emoji functionality
   class Emoji < JekyllSupport::JekyllTag
     PLUGIN_NAME = 'emoji'.freeze
-    VERSION = JekyllEmoji::VERSION
+    VERSION = JekyllEmojiTag::VERSION
 
         # Supported emojis (GitHub symbol, hex code) - see https://gist.github.com/rxaviers/7360908 and
     # https://www.quackit.com/character_sets/emoji/emoji_v3.0/unicode_emoji_v3.0_characters_all.cfm

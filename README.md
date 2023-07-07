@@ -1,5 +1,5 @@
-`jekyll_emoji`
-[![Gem Version](https://badge.fury.io/rb/jekyll_emoji.svg)](https://badge.fury.io/rb/jekyll_emoji)
+`jekyll_emoji_tag`
+[![Gem Version](https://badge.fury.io/rb/jekyll_emoji_tag.svg)](https://badge.fury.io/rb/jekyll_emoji_tag)
 ===========
 
 Inserts the specified emoji into the document.
@@ -13,7 +13,7 @@ Add this line to your Jekyll website's `Gemfile`, within the `jekyll_plugins` gr
 
 ```ruby
 group :jekyll_plugins do
-  gem 'jekyll_emoji'
+  gem 'jekyll_emoji_tag'
 end
 ```
 

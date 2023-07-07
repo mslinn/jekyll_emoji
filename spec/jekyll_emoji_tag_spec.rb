@@ -1,6 +1,6 @@
-require_relative '../lib/jekyll_emoji'
+require_relative '../lib/jekyll_emoji_tag'
 
-RSpec.describe JekyllEmoji::JekyllEmoji do
+RSpec.describe JekyllEmojiTag::JekyllEmojiTag do
   let(:logger) do
     PluginMetaLogger.instance.new_logger(self, PluginMetaLogger.instance.config)
   end

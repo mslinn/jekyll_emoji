@@ -1,16 +1,15 @@
-require_relative 'lib/jekyll_emoji/version'
+require_relative 'lib/jekyll_emoji_tag/version'
 
 Gem::Specification.new do |spec|
-  host = 'https://github.com/mslinn/jekyll_emoji'
+  host = 'https://github.com/mslinn/jekyll_emoji_tag'
 
   spec.authors               = ['Mike Slinn']
   spec.description           = <<~END_DESC
-    Write a longer description of the gem.
-    Use as many lines as you like.
+    Inserts an emoji
   END_DESC
   spec.email                 = ['mslinn@mslinn.com']
   spec.files                 = Dir['.rubocop.yml', 'LICENSE.*', 'Rakefile', '{lib,spec}/**/*', '*.gemspec', '*.md']
-  spec.homepage              = 'https://github.com/mslinn/jekyll_emoji'
+  spec.homepage              = 'https://github.com/mslinn/jekyll_emoji_tag'
   spec.license               = 'MIT'
   spec.metadata = {
     'allowed_push_host' => 'https://rubygems.org',
@@ -19,7 +18,7 @@ Gem::Specification.new do |spec|
     'homepage_uri'      => spec.homepage,
     'source_code_uri'   => host,
   }
-  spec.name                 = 'jekyll_emoji'
+  spec.name                 = 'jekyll_emoji_tag'
   spec.post_install_message = <<~END_MESSAGE
 
     Thanks for installing #{spec.name}!
@@ -27,8 +26,8 @@ Gem::Specification.new do |spec|
   END_MESSAGE
   spec.require_paths         = ['lib']
   spec.required_ruby_version = '>= 3.1.0'
-  spec.summary               = 'Write summary of what the gem is for'
-  spec.version               = JekyllEmoji::VERSION
+  spec.summary               = 'Inserts an emoji'
+  spec.version               = JekyllEmojiTag::VERSION
 
   spec.add_dependency 'jekyll', '>= 3.5.0'
   spec.add_dependency 'jekyll_plugin_support', '>= 0.7.0'

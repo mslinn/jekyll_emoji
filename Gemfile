@@ -5,7 +5,6 @@ gemspec
 
 group :test, :development do
   gem 'bundler', '>= 2.4.6', require: false
-  gem 'coveralls', require: false
   gem 'debase', '0.2.5.beta2', require: false
   gem 'gem-release', '>= 2.2.2', require: false
   gem 'rake', require: false
