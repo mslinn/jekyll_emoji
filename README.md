@@ -1,5 +1,6 @@
-# jekyll_emoji
-[![Gem Version](http://img.shields.io/gem/v/jekyll_emoji.svg)][gem]
+`jekyll_emoji`
+[![Gem Version](https://badge.fury.io/rb/jekyll_emoji.svg)](https://badge.fury.io/rb/jekyll_emoji)
+===========
 
 Inserts the specified emoji into the document.
 You can specify the size and alignment of the emoji.
