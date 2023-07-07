@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# The jekyll_emoji gem dependencies are defined in jekyll_emoji.gemspec
+# The jekyll_emoji_tag gem dependencies are defined in jekyll_emoji_tag.gemspec
 gemspec
 
 group :test, :development do

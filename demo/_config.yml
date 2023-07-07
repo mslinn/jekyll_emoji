@@ -41,8 +41,8 @@ plugins: # Use file name of the plugin entry point, not the gem name
   - jekyll
   - jekyll_plugin_logger
   - html-proofer
-  - jekyll_emoji
+  - jekyll_emoji_tag
 sass:
   style: compressed
-title: jekyll_emoji Demonstration
+title: jekyll_emoji_tag Demonstration
 url: https://bogus.jekylldemo.com

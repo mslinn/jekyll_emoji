@@ -24,7 +24,7 @@ module JekyllEmojiTag
     PLUGIN_NAME = 'emoji'.freeze
     VERSION = JekyllEmojiTag::VERSION
 
-        # Supported emojis (GitHub symbol, hex code) - see https://gist.github.com/rxaviers/7360908 and
+    # Supported emojis (GitHub symbol, hex code) - see https://gist.github.com/rxaviers/7360908 and
     # https://www.quackit.com/character_sets/emoji/emoji_v3.0/unicode_emoji_v3.0_characters_all.cfm
     @@emojis = {
       'angry'      => '&#x1F620;',

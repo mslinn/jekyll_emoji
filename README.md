@@ -88,7 +88,7 @@ and push the `.gem` file to https://rubygems.org.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on #<struct Creategem::Repository::Host domain="github.com", camel_case="GitHub", id=:github> at https://github.com/mslinn/jekyll_emoji.
+Bug reports and pull requests are welcome on #<struct Creategem::Repository::Host domain="github.com", camel_case="GitHub", id=:github> at https://github.com/mslinn/jekyll_emoji_tag.
 
 
 ## License

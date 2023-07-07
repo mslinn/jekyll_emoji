@@ -32,7 +32,7 @@ Metrics/AbcSize:
 
 Metrics/BlockLength:
   Exclude:
-    - jekyll_emoji.gemspec
+    - jekyll_emoji_tag.gemspec
   Max: 30
 
 Metrics/CyclomaticComplexity:

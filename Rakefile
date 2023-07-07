@@ -24,7 +24,7 @@ end
 
 task publish: [:build] do
   $VERBOSE = nil
-  load 'jekyll_emoji/version.rb'
+  load 'jekyll_emoji_tag/version.rb'
   system "gem push pkg/jekyll_emoji_tag-#{JekyllEmojiTag::VERSION}.gem"
 end
 
