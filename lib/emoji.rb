@@ -24,9 +24,13 @@ module JekyllEmojiTag
     PLUGIN_NAME = 'emoji'.freeze
     VERSION = JekyllEmojiTag::VERSION
 
+    class << self
+      attr_accessor :emojis
+    end
+
     # Supported emojis (GitHub symbol, hex code) - see https://gist.github.com/rxaviers/7360908 and
     # https://www.quackit.com/character_sets/emoji/emoji_v3.0/unicode_emoji_v3.0_characters_all.cfm
-    @@emojis = {
+    Emoji.emojis = {
       'angry'      => '&#x1F620;',
       'boom'       => '&#x1F4A5;', # used when requested emoji is not recognized
       'grin'       => '&#128512;',
@@ -51,7 +55,7 @@ module JekyllEmojiTag
       @emoji_size     = @helper.parameter_specified?('size')  || '3em'
       @emoji_and_name = @helper.parameter_specified?('emoji_and_name')
       @list           = @helper.parameter_specified?('list')
-      @emoji_hex_code = @@emojis[@emoji_name] if @emoji_name || @@emojis['boom']
+      @emoji_hex_code = Emoji.emojis[@emoji_name] if @emoji_name || Emoji.emojis['boom']
 
       # variables defined in pages are stored as hash values in liquid_context
       # _assigned_page_variable = @liquid_context['assigned_page_variable']
@@ -99,7 +103,7 @@ module JekyllEmojiTag
     end
 
     def list
-      items = @@emojis.map do |ename, hex_code|
+      items = Emoji.emojis.map do |ename, hex_code|
         "  <li>#{assemble_emoji(ename, hex_code)}</li>"
       end
       <<~END_RESULT

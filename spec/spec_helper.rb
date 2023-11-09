@@ -3,12 +3,10 @@ require 'jekyll_plugin_logger'
 require 'liquid'
 require 'fileutils'
 require 'yaml'
-require_relative '../lib/<%= @gem_name %>'
+require_relative '../lib/jekyll_emoji_tag'
 
 RSpec.configure do |config|
-  config.filter_run :focus
   # config.order = 'random'
-  config.run_all_when_everything_filtered = true
 
   # See https://relishapp.com/rspec/rspec-core/docs/command-line/only-failures
   config.example_status_persistence_file_path = '../spec/status_persistence.txt'
@@ -30,7 +28,7 @@ class SiteMock
   attr_reader :config
 
   def initialize
-    @config = YAML.safe_load(File.read('../demo/_config.yml'))
+    @config = YAML.safe_load_file('../demo/_config.yml')
     @config['env'] = { 'JEKYLL_ENV' => 'development' }
   end
 

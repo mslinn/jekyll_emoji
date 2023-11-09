@@ -5,27 +5,64 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "args": [
+        "serve",
+        "--livereload_port", "35734",
+        "--force_polling",
+        "--host", "0.0.0.0",
+        "--port", "4016",
+        "--future",
+        "--incremental",
+        "--livereload",
+        "--drafts",
+        "--unpublished"
+      ],
+      "cwd": "${workspaceRoot}/demo",
+      "debugPort": "0",
+      "name": "Debug Demo",
+      "request": "launch",
+      "script": "${workspaceRoot}/exe/jekyll",
+      "type": "rdbg",
+    },
+    {
       "name": "Run selected Ruby file",
       "program": "ruby {file}",
       "request": "launch",
       "type": "ruby_lsp"
     },
     {
-      "name": "Attach rdebug-ide",
+      "debugPort": "0",
+      "name": "Attach rdbg",
+      "type": "rdbg",
+      "request": "attach",
+    },
+    {
+      "name": "Attach ruby_lsp",
       "request": "attach",
       "type": "ruby_lsp",
     },
     {
-      "name": "RSpec - active spec file only",
-      "program": "binstub/rspec -I ${workspaceRoot} ${file}",
+      "args": [
+        "-I",
+        "${workspaceRoot}"
+      ],
+      "debugPort": "0",
+      "name": "RSpec - all",
       "request": "launch",
-      "type": "ruby_lsp",
+      "script": "${workspaceRoot}/exe/rspec",
+      "type": "rdbg",
     },
     {
-      "name": "RSpec - all",
-      "program": "${workspaceRoot}/binstub/rspec -I ${workspaceRoot}",
+      "args": [
+        "-I",
+        "${workspaceRoot}",
+        "${file}"
+      ],
+      "debugPort": "0",
+      "name": "RSpec - active spec file only",
       "request": "launch",
-      "type": "ruby_lsp",
+      "script": "${workspaceRoot}/exe/rspec",
+      "type": "rdbg",
     }
   ]
 }
