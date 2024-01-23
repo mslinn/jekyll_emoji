@@ -1,6 +1,4 @@
-`jekyll_emoji_tag`
-[![Gem Version](https://badge.fury.io/rb/jekyll_emoji_tag.svg)](https://badge.fury.io/rb/jekyll_emoji_tag)
-===========
+# `jekyll_emoji_tag` [![Gem Version](https://badge.fury.io/rb/jekyll_emoji_tag.svg)](https://badge.fury.io/rb/jekyll_emoji_tag)
 
 Inserts the specified emoji into the document.
 You can specify the size and alignment of the emoji.
@@ -18,6 +16,7 @@ end
 ```
 
 And then execute:
+
 ```bash
 $ bundle
 ```
@@ -28,13 +27,17 @@ $ bundle
 ```text
 {% emoji OPTIONS %}
 ```
+
 `OPTIONS` are:
 
- - `align` - `left`, `right` or `inline` (default is inline)
- - `emoji_and_name` - causes the name of the emoji to be output along with the image (default is false)
- - `list` - output all emojis (default is false)
- - `name` - name of emoji (defaults to smiley)
- - `size` - height of emoji (defaults to 3em)
+- `align` - `left`, `right` or `inline` (default is inline)
+- `class` - CSS style to add to the generated emoji
+- `div`   - Wrap the emoji in a <div> instead of a <span>
+- `emoji_and_name` - causes the name of the emoji to be output along with the image (default is false)
+- `list` - output all emojis (default is false)
+- `name` - name of emoji (defaults to smiley)
+- `size` - height of emoji (defaults to 3em)
+- `style` - Additional CSS styles for the generated emoji
 
 `list` and `name` are mutually exclusive; only specify one of them.
 
@@ -42,7 +45,7 @@ If neither `list` nor `name` is specified, the `smiley` emoji is output.
 
 The names of all supported emojis are:
 
-```
+```text
 angry
 boom
 grin
@@ -88,7 +91,7 @@ and push the `.gem` file to https://rubygems.org.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on #<struct Creategem::Repository::Host domain="github.com", camel_case="GitHub", id=:github> at https://github.com/mslinn/jekyll_emoji_tag.
+Bug reports and pull requests are welcome at https://github.com/mslinn/jekyll_emoji_tag.
 
 
 ## License

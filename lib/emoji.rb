@@ -1,5 +1,5 @@
 require 'jekyll_plugin_support'
-require_relative 'jekyll_emoji_tag/version.rb'
+require_relative 'jekyll_emoji_tag/version'
 
 # This Jekyll tag plugin creates an emoji of the desired size and alignment.
 #
@@ -50,11 +50,14 @@ module JekyllEmojiTag
     # @param tokens [Liquid::ParseContext] tokenized command line
     # @return [void]
     def render_impl
+      @klass          = @helper.parameter_specified? 'class'
+      @tag            = @helper.parameter_specified?('div') ? 'div' : 'span'
+      @style          = @helper.parameter_specified? 'style'
       @emoji_name     = @helper.parameter_specified?('name')  || 'smiley' # Ignored if `list` is specified
       @emoji_align    = @helper.parameter_specified?('align') || 'inline' # Allowable values are: inline, right or left
       @emoji_size     = @helper.parameter_specified?('size')  || '3em'
-      @emoji_and_name = @helper.parameter_specified?('emoji_and_name')
-      @list           = @helper.parameter_specified?('list')
+      @emoji_and_name = @helper.parameter_specified? 'emoji_and_name'
+      @list           = @helper.parameter_specified? 'list'
       @emoji_hex_code = Emoji.emojis[@emoji_name] if @emoji_name || Emoji.emojis['boom']
 
       # variables defined in pages are stored as hash values in liquid_context
@@ -68,7 +71,7 @@ module JekyllEmojiTag
           mode="#{@mode}"
           page attributes:
             #{@page.sort
-                   .reject { |k, _| REJECTED_ATTRIBUTES.include? k }
+                   .except(*REJECTED_ATTRIBUTES)
                    .map { |k, v| "#{k}=#{v}" }
                    .join("\n  ")}
         HEREDOC
@@ -85,21 +88,22 @@ module JekyllEmojiTag
     private
 
     def assemble_emoji(emoji_name, emoji_hex_code)
-      case @emoji_align
-      when 'inline'
-        align = ''
-      when 'right'
-        align = ' float: right; margin-left: 5px;'
-      when 'left'
-        align = ' float: left; margin-right: 5px;'
-      else
-        @logger.error { "Invalid emoji alignment #{@emoji_align}" }
-        align = ''
-      end
+      align = case @emoji_align
+              when 'inline'
+                ''
+              when 'right'
+                ' float: right; margin-left: 5px;'
+              when 'left'
+                ' float: left; margin-right: 5px;'
+              else
+                @logger.error { "Invalid emoji alignment #{@emoji_align}" }
+                ''
+              end
 
       name = " <code>#{emoji_name}</code>" if @emoji_and_name
+      klass = @klass ? " class='#{@klass}'" : ''
 
-      "<span style='font-size: #{@emoji_size};#{align}'>#{emoji_hex_code}</span>#{name}"
+      "<#{@tag}#{klass} style='font-size: #{@emoji_size};#{align};#{@style}'>#{emoji_hex_code}</#{@tag}>#{name}"
     end
 
     def list
