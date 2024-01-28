@@ -18,7 +18,7 @@ GIT
 PATH
   remote: ..
   specs:
-    jekyll_emoji_tag (0.1.0)
+    jekyll_emoji_tag (0.1.2)
       jekyll (>= 3.5.0)
       jekyll_plugin_support (>= 0.7.0)
 

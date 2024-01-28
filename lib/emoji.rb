@@ -33,16 +33,33 @@ module JekyllEmojiTag
     Emoji.emojis = {
       'angry'      => '&#x1F620;',
       'boom'       => '&#x1F4A5;', # used when requested emoji is not recognized
+      'clap'       => '&#x1F44F;',
+      'confounded' => '&#x1F616;',
+      'eggplant'   => '&#x1F346;',
+      'grimace'    => '&#x1F62C;',
       'grin'       => '&#128512;',
+      'halo'       => '&#x1F607;',
       'horns'      => '&#128520;',
       'kiss'       => '&#x1F619;',
+      'loudly_cry' => '&#x1F62D;',
+      'notes'      => '&#x1F3B6;',
       'open'       => '&#128515;',
+      'please'     => '&#x1F64F;',
       'poop'       => '&#x1F4A9;',
+      'rolling'    => '&#x1F644;',
       'sad'        => '&#128546;',
+      'sax'        => '&#x1F3B7;',
       'scream'     => '&#x1F631;',
       'smiley'     => '&#x1F601;', # default emoji
       'smirk'      => '&#x1F60F;',
+      'sunglasses' => '&#x1F60E;',
+      'think'      => '&#x1F914;',
       'two_hearts' => '&#x1F495;',
+      'wink'       => '&#x1F609;',
+      'worried'    => '&#x1f61f;',
+      'unamused'   => '&#x1F612;',
+      'vulcan'     => '&#x1F596;',
+      'zipper'     => '&#x1F910;',
     }.sort_by { |k, _v| [k] }.to_h
 
     # @param tag_name [String] is the name of the tag, which we already know.
