@@ -31,8 +31,8 @@ $ bundle
 `OPTIONS` are:
 
 - `align` - `left`, `right` or `inline` (default is inline)
-- `class` - CSS style to add to the generated emoji
-- `div`   - Wrap the emoji in a <div> instead of a <span>
+- `class` - CSS class to apply to the generated emoji
+- `div`   - Wrap the emoji in a &lt;div/> instead of a &lt;span/>
 - `emoji_and_name` - causes the name of the emoji to be output along with the image (default is false)
 - `list` - output all emojis (default is false)
 - `name` - name of emoji (defaults to smiley)
@@ -48,16 +48,33 @@ The names of all supported emojis are:
 ```text
 angry
 boom
+clap
+confounded
+eggplant
+grimace
 grin
+halo
 horns
 kiss
+loudly_cry
+notes
 open
+please
 poop
+rolling
 sad
+sax
 scream
 smiley
 smirk
+sunglasses
+think
 two_hearts
+wink
+worried
+unamused
+vulcan
+zipper
 ```
 
 ## Example Usage
