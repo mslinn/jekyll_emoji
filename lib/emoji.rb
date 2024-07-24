@@ -20,7 +20,7 @@ require_relative 'jekyll_emoji_tag/version'
 #   MyTag: debug
 module JekyllEmojiTag
   # This class implements the Jekyll emoji functionality
-  class Emoji < JekyllSupport::JekyllTag
+  class Emoji < ::JekyllSupport::JekyllTag
     PLUGIN_NAME = 'emoji'.freeze
     VERSION = JekyllEmojiTag::VERSION
 
@@ -134,6 +134,6 @@ module JekyllEmojiTag
       END_RESULT
     end
 
-    JekyllPluginHelper.register(self, PLUGIN_NAME)
+    ::JekyllSupport::JekyllPluginHelper.register(self, PLUGIN_NAME)
   end
 end

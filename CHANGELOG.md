@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.3 / 2024-07-24
+
+* Make compatible with `jekyll_plugin_support` v0.8.7
+
+
 ## 0.1.2 / 2024-01-28
 
 * Added `clap` (hands), `confounded`, `eggplant`, `grimace`, `halo`, `loudly_crying`,
