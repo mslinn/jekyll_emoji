@@ -1,0 +1,7 @@
+div.jekyll_pre + span.emoji {
+  margin-top: 10px;
+}
+
+.emoji.big {
+  font-size: 3em;
+}

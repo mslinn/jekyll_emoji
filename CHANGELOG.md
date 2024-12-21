@@ -3,7 +3,16 @@
 ## 0.1.4 / 2024-12-21
 
 * Added the `emoji` class to the emitted span or div.
+* The demo webapp now includes a stylesheet: `/assets/css/jekyll_emoji`.
+* Previous versions defaulted to `font-size: 3em;`.
+  If you want the default font size to remain as it was for previous version of this Jekyll tag,
+  define the emoji class as:
 
+  ```css
+  .emoji {
+    font-size: 3em;
+  }
+  ```
 
 ## 0.1.3 / 2024-07-24
 

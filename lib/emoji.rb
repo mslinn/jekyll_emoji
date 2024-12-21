@@ -67,14 +67,18 @@ module JekyllEmojiTag
     # @param tokens [Liquid::ParseContext] tokenized command line
     # @return [void]
     def render_impl
-      @klass          = @helper.parameter_specified? 'class'
-      @tag            = @helper.parameter_specified?('div') ? 'div' : 'span'
-      @style          = @helper.parameter_specified? 'style'
-      @emoji_name     = @helper.parameter_specified?('name')  || 'smiley' # Ignored if `list` is specified
       @emoji_align    = @helper.parameter_specified?('align') || 'inline' # Allowable values are: inline, right or left
-      @emoji_size     = @helper.parameter_specified?('size')  || '3em'
+
+      emoji_size     = @helper.parameter_specified?('size')
+      @emoji_size    = "font-size: #{emoji_size}; " if emoji_size
+
+      @emoji_name     = @helper.parameter_specified?('name') || 'smiley' # Ignored if `list` is specified
       @emoji_and_name = @helper.parameter_specified? 'emoji_and_name'
+      @klass          = @helper.parameter_specified? 'class'
       @list           = @helper.parameter_specified? 'list'
+      @style          = @helper.parameter_specified? 'style'
+      @tag            = @helper.parameter_specified?('div') ? 'div' : 'span'
+
       @emoji_hex_code = Emoji.emojis[@emoji_name] if @emoji_name || Emoji.emojis['boom']
 
       # variables defined in pages are stored as hash values in liquid_context
@@ -119,8 +123,9 @@ module JekyllEmojiTag
 
       name = " <code>#{emoji_name}</code>" if @emoji_and_name
       klass = @klass ? " class='emoji #{@klass}'" : " class='emoji'"
+      style = "#{@emoji_size}#{align};#{@style}".strip.gsub ';;', ';'
 
-      "<#{@tag}#{klass} style='font-size: #{@emoji_size};#{align};#{@style}'>#{emoji_hex_code}</#{@tag}>#{name}"
+      "<#{@tag}#{klass} style='#{style}'>#{emoji_hex_code}</#{@tag}>#{name}"
     end
 
     def list
