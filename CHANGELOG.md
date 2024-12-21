@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.4 / 2024-12-21
+
+* Added the `emoji` class to the emitted span or div.
+
+
 ## 0.1.3 / 2024-07-24
 
 * Make compatible with `jekyll_plugin_support` v1.0.0

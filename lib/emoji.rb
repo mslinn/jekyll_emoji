@@ -118,7 +118,7 @@ module JekyllEmojiTag
               end
 
       name = " <code>#{emoji_name}</code>" if @emoji_and_name
-      klass = @klass ? " class='#{@klass}'" : ''
+      klass = @klass ? " class='emoji #{@klass}'" : " class='emoji'"
 
       "<#{@tag}#{klass} style='font-size: #{@emoji_size};#{align};#{@style}'>#{emoji_hex_code}</#{@tag}>#{name}"
     end
