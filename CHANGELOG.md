@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.5 / 2025-02-14
+
+* Added the `party` emoji (&#x1F389;).
+
+
 ## 0.1.4 / 2024-12-21
 
 * Added the `emoji` class to the emitted span or div.

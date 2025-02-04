@@ -44,6 +44,7 @@ module JekyllEmojiTag
       'loudly_cry' => '&#x1F62D;',
       'notes'      => '&#x1F3B6;',
       'open'       => '&#128515;',
+      'party'      => '&#x1F389;',
       'please'     => '&#x1F64F;',
       'poop'       => '&#x1F4A9;',
       'rolling'    => '&#x1F644;',
